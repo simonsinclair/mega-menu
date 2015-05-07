@@ -17,15 +17,138 @@ body {
   line-height: 22px; // 1.4
   // -webkit-font-smoothing: antialiased;
 }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
 // PAGE
 //
+.container {
+  margin: 0 auto;
+  max-width: 1008px;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+.container--full {
+  padding-right: 0;
+  padding-left: 0;
+}
+.blq {
+  height: 40px;
+}
 
+// Masthead
+.masthead {}
+  .masthead__main {
+    background-color: #CC0101;
+  }
+    .masthead__brand {
+      display: block;
+      padding-top: 13px;
+      padding-bottom: 13px;
+    }
+
+// Navigation as a whole
+.primary-nav,
+.secondary-nav {
+
+  ul {
+    @extend %nav;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    li {
+
+      &:first-child {
+
+        a {
+          padding-left: 16px;
+        }
+      }
+      &:last-child {
+
+        a {
+
+          span {
+            border: none;
+            padding-right: 16px;
+          }
+        }
+      }
+    }
+    a {
+      font-size: 14px;
+      padding-top: 10px;
+      padding-bottom: 4px;
+      padding-left: 12px;
+
+      span {
+        border-right: 1px solid rgba(255,255,255,0.5);
+        padding-right: 12px;
+      }
+    }
+  }
+}
+
+// Primary only
+.primary-nav {
+  background-color: #A80202;
+
+  ul {
+
+    li {
+
+      &.active {
+
+        a {
+          border-bottom: 4px solid #FFF;
+        }
+      }
+    }
+    a {
+      color: #FFF;
+    }
+  }
+}
+  .primary-nav__inner {}
+
+// Secondary only
+.secondary-nav {
+  border-bottom: 1px solid #DDD;
+
+  ul {
+
+    a {
+
+      span {
+        border-color: #DDD;
+      }
+    }
+  }
+}
+  .secondary-nav__inner {}
+
+// Objects
+//
+
+%nav {
+  @extend %clearfix;
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    float: left;
+  }
+  a {
+    display: block;
+  }
+}
 
 // Utility
 //
 
-.clearfix {
+%clearfix {
 
   &:after {
     content: "";
