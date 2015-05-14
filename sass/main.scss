@@ -198,6 +198,17 @@ a {
   }
 }
 
+// Mega nav
+.mega-nav {
+  background-color: #000;
+  height: 0;
+  transition: height 250ms ease;
+}
+.mega-nav--visible {
+  height: 320px;
+  transition: height 250ms ease;
+}
+
 // Objects
 //
 

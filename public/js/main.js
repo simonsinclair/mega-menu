@@ -31,6 +31,8 @@
 
     onAllNewsClick: function(e) {
       e.preventDefault();
+
+      $('#js-mega-nav').toggleClass('mega-nav--visible');
     }
   };
 
