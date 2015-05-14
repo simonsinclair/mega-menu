@@ -15,7 +15,6 @@ body {
   color: #333;
   font-size: 16px;
   line-height: 22px; // 1.4
-  // -webkit-font-smoothing: antialiased;
 }
 a {
   color: inherit;
@@ -45,8 +44,8 @@ a {
   }
     .masthead__brand {
       display: block;
-      padding-top: 13px;
-      padding-bottom: 13px;
+      height: 56px;
+      width: 128px;
     }
 
 // Navigation as a whole
@@ -58,36 +57,78 @@ a {
     margin-top: 0;
     margin-bottom: 0;
 
-    li {
+    > li {
 
+      // First list item in the nav
       &:first-child {
 
         a {
-          padding-left: 16px;
-        }
-      }
-      &:last-child {
+          padding-left: 4px; // Add 4 to 12 to make 16px margin
 
-        a {
-
-          span {
-            border: none;
-            padding-right: 16px;
+          &::before {
+            background-color: rgba(255,255,255,0);
           }
         }
       }
-    }
-    a {
-      font-size: 14px;
-      padding-top: 10px;
-      padding-bottom: 4px;
-      padding-left: 12px;
 
-      span {
-        border-right: 1px solid rgba(255,255,255,0.5);
-        padding-right: 12px;
+      // Last list item in the nav
+      &:last-child {
+
+        a {
+          padding-right: 16px;
+        }
       }
-    }
+
+      // Every anchor in the nav list
+      a {
+        padding-top: 9px;
+        padding-right: 12px;
+
+        // Vertical separating line
+        &::before {
+          background-color: rgba(255,255,255,0.6);
+          display: inline-block;
+          content: "";
+          height: 12px;
+          margin-right: 12px;
+          width: 1px;
+        }
+
+        span {
+          display: inline-block;
+          padding-bottom: 7px;
+        }
+      }
+    } // li
+
+    // The active nav list item
+    > .active {
+
+      a {
+        background-color: #FFF;
+
+        &::before {
+          background-color: rgba(255,255,255,0);
+        }
+
+        span {
+          border-bottom: 4px solid #A80202;
+          padding-bottom: 3px;
+        }
+      }
+
+      // The list item that directly follows an active one
+      + li {
+
+        a {
+
+          &::before {
+            background-color: rgba(255,255,255,0);
+          }
+        }
+      }
+    } // .active
+
   }
 }
 
@@ -97,17 +138,19 @@ a {
 
   ul {
 
-    li {
+    > li {
+
+      a {
+        color: #FFF;
+        -webkit-font-smoothing: antialiased;
+      }
 
       &.active {
 
         a {
-          border-bottom: 4px solid #FFF;
+          color: inherit;
         }
       }
-    }
-    a {
-      color: #FFF;
     }
   }
 }
@@ -116,16 +159,6 @@ a {
 // Secondary only
 .secondary-nav {
   border-bottom: 1px solid #DDD;
-
-  ul {
-
-    a {
-
-      span {
-        border-color: #DDD;
-      }
-    }
-  }
 }
   .secondary-nav__inner {}
 

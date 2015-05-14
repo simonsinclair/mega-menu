@@ -4,12 +4,27 @@
 (function(w, $, undefined) {
   "use strict";
 
-	var Module = {
+	var Menu = {
 
     init: function() {
-      // ...
+
+      Menu.bindEvts();
+    },
+
+    bindEvts: function() {
+
+      $("#js-primary-nav").on('click', 'a', Menu.onPrimaryNavClick);
+    },
+
+    onPrimaryNavClick: function(e) {
+      e.preventDefault();
+
+      $("#js-primary-nav li").removeClass('active');
+      $(this)
+        .parent()
+        .addClass('active');
     }
   };
 
-	$(Module.init);
+	$(Menu.init);
 })(this, jQuery);
