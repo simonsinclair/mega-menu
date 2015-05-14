@@ -81,8 +81,17 @@ a {
 
       // Every anchor in the nav list
       a {
+        font-size: 14px;
         padding-top: 9px;
         padding-right: 12px;
+
+        &:hover {
+
+          span {
+            border-bottom: 4px solid #FFF;
+            padding-bottom: 3px;
+          }
+        }
 
         // Vertical separating line
         &::before {
@@ -102,10 +111,17 @@ a {
     } // li
 
     // The active nav list item
-    > .active {
+    > li.active {
 
       a {
         background-color: #FFF;
+
+        &:hover {
+
+          span {
+            border-bottom: 4px solid inherit;
+          }
+        }
 
         &::before {
           background-color: rgba(255,255,255,0);
@@ -142,7 +158,6 @@ a {
 
       a {
         color: #FFF;
-        -webkit-font-smoothing: antialiased;
       }
 
       &.active {
@@ -159,8 +174,29 @@ a {
 // Secondary only
 .secondary-nav {
   border-bottom: 1px solid #DDD;
+
+  ul {
+
+    > li {
+
+      a {
+
+        &::before {
+          background-color: rgba(0,0,0,0.25);
+        }
+      }
+    }
+  }
 }
   .secondary-nav__inner {}
+
+// All News CTA
+.all-news {
+
+  a {
+    padding-bottom: 7px;
+  }
+}
 
 // Objects
 //
