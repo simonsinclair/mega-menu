@@ -167,7 +167,6 @@ a {
 // Primary only
 .primary-nav {
   background-color: #A80202;
-  transition: background-color 250ms ease;
 
   ul {
 
@@ -187,13 +186,12 @@ a {
   }
 }
 .primary-nav--blend {
-  background-color: #111;
-  transition: background-color 250ms ease;
 
   // Alter the 'All News' CTA when primary nav is in blend-mode
   .all-news {
 
     a {
+      background-color: #111;
 
       &::before {
         background-color: rgba(255,255,255,0);
@@ -262,14 +260,15 @@ a {
   font-size: 14px;
   height: 0;
   overflow: hidden;
-  transition: height 250ms ease;
+  transition: height 250ms ease-out;
 }
 .mega-nav--open {
-  height: 310px;
-  transition: height 250ms ease;
+  height: 330px;
+  transition: height 250ms ease-out;
 }
   .mega-nav__upper {
     @extend %clearfix;
+    padding-top: 20px;
     padding-bottom: 20px;
   }
 
@@ -331,16 +330,40 @@ a {
 
 // Transition
 .primary-nav {
-  a { opacity: 1; }
+
+  ul {
+    overflow: hidden;
+  }
+  a {
+    opacity: 1;
+
+    &.hidden {
+      opacity: 0;
+      transform: translate3d(0,1em,0);
+    }
+  }
 }
-.upper__primary {
-  a { opacity: 0; }
-}
-.primary-nav,
 .upper__primary {
 
   a {
-    transition: opacity 23ms linear;
+    opacity: 1;
+
+    &.hidden {
+      opacity: 0;
+      transform: translate3d(0,-1em,0);
+    }
+  }
+}
+.primary-nav {
+
+  a {
+    transition: opacity 60ms linear, transform 60ms linear;
+  }
+}
+.upper__primary {
+
+  a {
+    transition: opacity 60ms linear, transform 60ms linear;
   }
 }
 
