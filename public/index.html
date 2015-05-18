@@ -27,9 +27,9 @@
       </div>
 
       <!-- Navigation -->
-      <div class="primary-nav">
+      <div class="primary-nav" id="js-primary-nav">
         <div class="primary-nav__inner container container--full">
-          <ul id="js-primary-nav">
+          <ul>
             <li class="active"><a href="#"><span>Home</span></a></li>
             <li><a href="#"><span>UK</span></a></li>
             <li><a href="#"><span>World</span></a></li>
@@ -43,15 +43,64 @@
             <li><a href="#"><span>Video &amp; Audio</span></a></li>
 
             <li class="all-news">
-              <a href="#" id="js-all-news"><img src="img/list.svg" alt="" width="12" height="12" /> All News</a>
+              <a href="#" id="js-all-news">
+                <img class="all-news__list" src="img/list.svg" alt="" width="13" height="13" />
+                <img class="all-news__close" src="img/close.svg" alt="" width="13" height="13" />
+                Sections
+              </a>
             </li>
           </ul>
         </div>
       </div>
 
       <div class="mega-nav" id="js-mega-nav">
-        <!-- ... -->
-      </div>
+
+        <!-- Upper -->
+        <div class="mega-nav__upper">
+          <div class="container container">
+            <ul class="upper__primary" id="js-upper-primary">
+              <li class="active"><a href="#"><span>Home</span></a></li>
+              <li><a href="#"><span>UK</span></a></li>
+              <li><a href="#"><span>World</span></a></li>
+              <li><a href="#"><span>Business</span></a></li>
+              <li><a href="#"><span>Politics</span></a></li>
+              <li><a href="#"><span>Tech</span></a></li>
+              <li><a href="#"><span>Science</span></a></li>
+              <li><a href="#"><span>Health</span></a></li>
+              <li><a href="#"><span>Education</span></a></li>
+              <li><a href="#"><span>Entertainment &amp; Arts</span></a></li>
+              <li><a href="#"><span>Video &amp; Audio</span></a></li>
+            </ul>
+            <ul class="upper__aside">
+              <li><a href="#"><span>Most Popular</span></a></li>
+              <li><a href="#"><span>Magazine</span></a></li>
+              <li><a href="#"><span>In Pictures</span></a></li>
+              <li><a href="#"><span>Video &amp; Audio</span></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Lower -->
+        <div class="mega-nav__lower">
+          <div class="container container">
+            <ul class="lower__in-depth">
+              <li class="lower__heading-item">In depth</li>
+              <li><a href="#"><span>Special Reports</span></a></li>
+              <li><a href="#"><span>Topics</span></a></li>
+              <li><a href="#"><span>Explainers</span></a></li>
+              <li><a href="#"><span>Future of News</span></a></li>
+            </ul>
+            <ul class="lower__comment-analysis">
+              <li class="lower__heading-item">Comment &amp; Analysis</li>
+              <li><a href="#"><span>Correspondents</span></a></li>
+              <li><a href="#"><span>Blogs</span></a></li>
+              <li><a href="#"><span>The Reporters</span></a></li>
+              <li><a href="#"><span>Have Your Say</span></a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div><!-- /.mega-nav -->
 
       <div class="secondary-nav">
         <div class="secondary-nav__inner container container--full">

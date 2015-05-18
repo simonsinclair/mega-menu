@@ -21,6 +21,22 @@ a {
   text-decoration: none;
 }
 
+// Objects
+//
+
+%nav {
+  @extend %clearfix;
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    float: left;
+  }
+  a {
+    display: block;
+  }
+}
+
 // PAGE
 //
 .container {
@@ -151,6 +167,7 @@ a {
 // Primary only
 .primary-nav {
   background-color: #A80202;
+  transition: background-color 250ms ease;
 
   ul {
 
@@ -167,6 +184,27 @@ a {
         }
       }
     }
+  }
+}
+.primary-nav--blend {
+  background-color: #111;
+  transition: background-color 250ms ease;
+
+  // Alter the 'All News' CTA when primary nav is in blend-mode
+  .all-news {
+
+    a {
+
+      &::before {
+        background-color: rgba(255,255,255,0);
+      }
+    }
+  }
+  .all-news__list {
+    display: none;
+  }
+  .all-news__close {
+    display: inline-block;
   }
 }
   .primary-nav__inner {}
@@ -195,33 +233,114 @@ a {
 
   a {
     padding-bottom: 7px;
+
+    &:hover {
+      background-color: #111;
+
+      &::before {
+        background-color: rgba(255,255,255,0);
+      }
+    }
   }
 }
+  .all-news__list,
+  .all-news__close {
+    margin-right: 3px;
+    margin-bottom: -1px;
+  }
+  .all-news__list {
+    display: inline-block;
+  }
+  .all-news__close {
+    display: none;
+  }
 
 // Mega nav
 .mega-nav {
-  background-color: #000;
+  background-color: #111;
+  color: #FFF;
+  font-size: 14px;
   height: 0;
+  overflow: hidden;
   transition: height 250ms ease;
 }
-.mega-nav--visible {
-  height: 320px;
+.mega-nav--open {
+  height: 310px;
   transition: height 250ms ease;
 }
-
-// Objects
-//
-
-%nav {
-  @extend %clearfix;
-  list-style: none;
-  padding-left: 0;
-
-  li {
-    float: left;
+  .mega-nav__upper {
+    @extend %clearfix;
+    padding-bottom: 20px;
   }
+
+    .upper__primary,
+    .upper__aside,
+    .lower__in-depth,
+    .lower__comment-analysis {
+      @extend %nav;
+      float: left;
+      margin-top: 0;
+      margin-bottom: 0;
+
+      li {}
+      a {
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
+    }
+
+    .upper__primary {
+      width: 66.66%;
+
+      li {
+        width: 33.33%;
+      }
+    }
+    .upper__aside {
+      border-left: 1px solid #333;
+      padding-left: 24px;
+      width: 33.33%;
+
+      li {
+        width: 100%;
+      }
+    }
+
+  .mega-nav__lower {
+    @extend %clearfix;
+    background-color: #333;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+    .lower__in-depth {}
+    .lower__comment-analysis {}
+
+    .lower__in-depth,
+    .lower__comment-analysis {
+      width: 50%;
+
+      li {
+        width: 50%;
+      }
+      .lower__heading-item {
+        color: #999;
+        text-transform: uppercase;
+        width: 100%;
+      }
+    }
+
+// Transition
+.primary-nav {
+  a { opacity: 1; }
+}
+.upper__primary {
+  a { opacity: 0; }
+}
+.primary-nav,
+.upper__primary {
+
   a {
-    display: block;
+    transition: opacity 23ms linear;
   }
 }
 
