@@ -39,11 +39,11 @@
       if(Menu.open) {
         $('#js-mega-nav').removeClass('mega-nav--open');
         $('#js-primary-nav').removeClass('primary-nav--blend');
-        Menu.fadePrimaryNavItemsIn( 23 );
+        Menu.fadePrimaryNavItemsIn( 10 );
       } else {
         $('#js-mega-nav').addClass('mega-nav--open');
         $('#js-primary-nav').addClass('primary-nav--blend');
-        Menu.fadePrimaryNavItemsOut( 23 );
+        Menu.fadePrimaryNavItemsOut( 10 );
       }
 
       Menu.open = !Menu.open;
