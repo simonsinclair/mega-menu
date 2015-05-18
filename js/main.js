@@ -58,11 +58,11 @@
       var fade = function() {
         if( currIteration !== $itemsOut.length ) {
 
-          var currElemOut = $itemsOut[currIteration];
-          var currElemIn  = $itemsIn[currIteration];
+          var currElemOut = $itemsOut[ currIteration ];
+          var currElemIn  = $itemsIn[ currIteration ];
 
-          $(currElemOut).css('opacity', 0);
-          $(currElemIn).css('opacity', 1);
+          $(currElemOut).addClass('hidden');
+          $(currElemIn).removeClass('hidden');
 
           setTimeout(fade, delay);
           currIteration++;
@@ -80,11 +80,11 @@
       var fade = function() {
         if( currIteration !== $itemsIn.length ) {
 
-          var currElemOut = $itemsOut[currIteration];
-          var currElemIn  = $itemsIn[currIteration];
+          var currElemOut = $itemsOut[ currIteration ];
+          var currElemIn  = $itemsIn[ currIteration ];
 
-          $(currElemOut).css('opacity', 0);
-          $(currElemIn).css('opacity', 1);
+          $(currElemOut).addClass('hidden');
+          $(currElemIn).removeClass('hidden');
 
           setTimeout(fade, delay);
           currIteration++;
